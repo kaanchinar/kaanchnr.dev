@@ -63,11 +63,11 @@ export default function Home() {
         </div>
 
       </div>
-      <Link href={'/contact'} className='relative z-20 mb-10'>
-        <button className='flex items-center justify-center gap-2 bg-Accent py-3 px-12 rounded-xs'>
+      <Link href={'/contact'} className='relative z-20 mb-10 flex items-center justify-center gap-2 bg-Accent py-3 px-12 rounded-xs transition-colors hover:bg-Secondary'>
+        
           <div >Contact</div>
           <Image priority src={'/arrowRight.svg'} width={24} height={24} alt='arrow'/>
-        </button>
+        
       </Link>
       
 
