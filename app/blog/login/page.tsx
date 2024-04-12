@@ -30,7 +30,7 @@ export const formSchema = z.object({
 const Login = () => {
 
   const route = useRouter()
-  // 1. Define your form.
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -39,10 +39,9 @@ const Login = () => {
     },
   })
  
-  // 2. Define a submit handler.
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+
     const res = await login(values)
 
     if (res.error){
