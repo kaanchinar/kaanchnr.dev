@@ -1,5 +1,12 @@
+import { validateSession } from "@/auth"
+import { redirect } from "next/navigation"
 
-const Create = () => {
+const Create = async () => {
+  const {user} = await validateSession()
+  if (!user) {
+    return redirect("/blog/login")
+  }
+
   return (
     <main className="min-h-screen relative z-20">Create</main>
   )
