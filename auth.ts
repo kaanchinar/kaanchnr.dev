@@ -31,7 +31,7 @@ export const validateSession = cache(async () => {
         }
     }
 
-
+	
 
 	const { user, session } = await lucia.validateSession(sessionId);
 	try {
@@ -43,8 +43,9 @@ export const validateSession = cache(async () => {
 			const sessionCookie = lucia.createBlankSessionCookie();
 			cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
 		}
-	} catch {
+	} catch(e:any) {
 		// Next.js throws error when attempting to set cookies when rendering page
+		console.log(e.message)
 	}
 	return {user, session};
 });

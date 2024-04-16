@@ -1,10 +1,11 @@
 import { validateSession } from "@/auth"
 import { redirect } from "next/navigation"
 
+
 const Create = async () => {
-  const {user} = await validateSession()
+    const {user} = await validateSession()
   if (!user) {
-    return redirect("/blog/login")
+    redirect("/blog/login")
   }
 
   return (

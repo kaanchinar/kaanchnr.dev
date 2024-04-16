@@ -16,8 +16,9 @@ import {
 import { Input } from "@/components/ui/input"
 import { login } from "../actions/auth.action"
 import { toast } from "@/components/ui/use-toast"
-import { useRouter } from "next/navigation"
- 
+import { redirect, useRouter } from "next/navigation"
+
+
 export const formSchema = z.object({
   username: z.string().min(2, {
     message: "Username must be at least 2 characters.",
@@ -29,7 +30,7 @@ export const formSchema = z.object({
  
 const Login = () => {
 
-  const route = useRouter()
+  const router = useRouter()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -57,7 +58,7 @@ const Login = () => {
         description: "You have successfully logged in",
         duration: 5000
       })
-      route.push("/blog/create")
+      router.push("/blog/create")
     }
   }
   return (

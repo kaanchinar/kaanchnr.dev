@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Header = () => {
   return (
-<header className="navbar z-20 sticky top-0 bg-Background">
+<header className="navbar z-30 sticky top-0 bg-Background">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
