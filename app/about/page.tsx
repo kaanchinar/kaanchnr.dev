@@ -21,20 +21,13 @@ const About = () => {
              * 
              * //TODO: Add more content here.
              */}
-             <p className=" mt-14">Dedicated and innovative Full Stack Web Developer with expertise in React, React Native, Redux, and the
-              MERN stack. Proficient in C++, Dart, Express.js, and experienced with Linux environments, particularly
-              Arch Linux and Ubuntu. Skilled in crafting seamless user experiences using React and Next.js and
-              developing dynamic applications with the MERN stack.</p>
-              <p className="mt-2">Familiar with Linux server administration tasks,
-              proficient in Git and Bash scripting, and experienced in Docker for creating and managing containers at an
-              entry level. Experienced in collaborative project environments with strong communication skills. Eager to
-              contribute to innovative projects and further refine skills in a dynamic team setting.</p>
+             <p className="mt-14">Full Stack Developer with expertise in building modern web applications using React, React Native, and Next.js. Skilled in creating dynamic backends with the MERN stack (MongoDB, Express.js, React, Node.js).  Experienced in C++, Dart, and Express.js, and comfortable with Linux environments.  Comfortable with Git version control and Bash scripting. Eager to contribute to innovative projects and grow within a collaborative team.</p>
             </div>
             <div className="flex flex-col items-center md:items-start justify-center gap-2">
               <Link href="/contact" className="rounded-xs hover:bg-Secondary py-3 px-12 transition-colors bg-Accent">Get in touch!</Link>
               <a href="mailto:kaanc645@gmail.com" className="outline-none transition-all  hover:text-transparent hover:bg-gradient-to-r hover:from-Primary hover:to-Accent bg-Text bg-clip-text text-sm">kaanc645@gmail.com</a>
               <div className="flex gap-6 items-center justify-center max-h-6">
-                <a href="https://github.com/zurnadurumm" target="_blank">
+                <a href="https://github.com/kaanchinar" target="_blank">
                   <SiGithub className="outline-none transition-all text-Text hover:text-Accent" size={24} />
                 </a>
                 <a href="https://www.linkedin.com/in/kaan-chinar/" target="_blank">
