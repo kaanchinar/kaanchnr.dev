@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center">
       
-      <div className="w-full grid place-content-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center relative z-20 mb-40">
+      <div className="w-full grid place-content-center text-2xl mt-16 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center relative z-20 mb-40">
         <h1 className="font-bold max-w-[320px] sm:max-w-96 md:max-w-[420px] lg:max-w-[500px] xl:max-w-[620px]">
            Building solutions that <span className="text-transparent bg-gradient-to-r from-Primary to-Secondary bg-clip-text">connect and inspire.</span> 
         </h1>
