@@ -33,7 +33,7 @@ const Header = () => {
       </ul>
     </div>
     <Link href="/">
-      <Image src="/logo.svg" alt="Logo" width={176} height={40} className="min-w-[176px]"/>
+      <Image src="/logo.svg" alt="Logo" width={176} height={40} className="min-w-[176px] ml-6"/>
     </Link>
   </div>
   <div className="navbar-end hidden md:flex">
