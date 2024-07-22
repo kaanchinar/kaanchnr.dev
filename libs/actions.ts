@@ -29,6 +29,7 @@ export async function createMessage(prevState: any ,form: FormData) {
     
     return { message: "Message sent successfully", success: true };
   } catch (err) {
+    console.error(err)
     return { message: "Invalid input", success: false };
   }
 }
