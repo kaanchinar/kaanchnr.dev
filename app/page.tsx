@@ -1,6 +1,9 @@
 "use client"
 import Image from 'next/image';
 import Link from 'next/link';
+import "react-toastify/dist/ReactToastify.css";
+
+import { Slide, ToastContainer } from "react-toastify";
 
 
 export default function Home() {
