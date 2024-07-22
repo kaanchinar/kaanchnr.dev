@@ -41,6 +41,5 @@ next-env.d.ts
 bun.lockb
 .gitignore
 *.db
-prisma/
-schema.prisma
+prisma/migrations
 
