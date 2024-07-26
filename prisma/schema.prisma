@@ -28,3 +28,10 @@ model BlogPost {
   publishedAt DateTime @default(now())
   
 }
+
+model User {
+  id Int @id @default(autoincrement())
+  email String
+  password String
+  
+}
