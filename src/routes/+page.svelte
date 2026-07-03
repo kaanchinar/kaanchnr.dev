@@ -1,5 +1,4 @@
 <script lang="ts">
-	import avatar from '$lib/assets/avatar.svg';
 	import { about } from '$lib/data/about';
 	import { experience } from '$lib/data/experience';
 	import { projects } from '$lib/data/projects';
@@ -24,7 +23,16 @@
 </svelte:head>
 
 <section class="mb-12 flex flex-col items-start gap-5">
-	<img src={avatar} alt="" class="h-20 w-20 rounded-full border border-border" />
+	<picture>
+		<source srcset="/photo-256.webp 256w, /photo-512.webp 512w" type="image/webp" />
+		<img
+			src="/photo-128.png"
+			alt={about.name}
+			width="128"
+			height="128"
+			class="h-20 w-20 rounded-full border border-border object-cover"
+		/>
+	</picture>
 	<div class="flex w-full flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
 		<div>
 			<h1 class="text-2xl font-bold tracking-tight text-fg">{about.name}</h1>
