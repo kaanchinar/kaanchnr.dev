@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--color-bg: var(--bg);
+	--color-fg: var(--fg);
+	--color-bg-elevated: var(--bg-elevated);
+	--color-muted: var(--muted);
+	--color-border: var(--border);
+	--color-accent: var(--accent);
+
+	--font-sans:
+		ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, sans-serif;
+	--font-mono:
+		ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+		monospace;
+}
+
+:root {
+	--bg: #fafafa;
+	--fg: #0a0a0a;
+	--bg-elevated: #ffffff;
+	--muted: #737373;
+	--border: #e5e5e5;
+	--accent: #171717;
+}
+
+[data-theme='dark'] {
+	--bg: #0a0a0a;
+	--fg: #fafafa;
+	--bg-elevated: #171717;
+	--muted: #a3a3a3;
+	--border: #262626;
+	--accent: #e5e5e5;
+}
+
+html {
+	background-color: var(--bg);
+	color: var(--fg);
+}
+
+::selection {
+	background-color: var(--fg);
+	color: var(--bg);
+}

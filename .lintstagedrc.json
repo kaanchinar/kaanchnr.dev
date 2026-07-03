@@ -1,0 +1,5 @@
+{
+	"*": "secretlint",
+	"*.{js,ts,svelte}": "eslint",
+	"*.{js,ts,svelte,css,md,json,yml,yaml,html}": "prettier --check"
+}

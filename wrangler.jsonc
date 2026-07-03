@@ -1,0 +1,17 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "kaanchnr-dev",
+	"compatibility_date": "2026-06-27",
+	"compatibility_flags": ["nodejs_als"],
+	"main": ".svelte-kit/cloudflare/_worker.js",
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".svelte-kit/cloudflare"
+	},
+	"workers_dev": true,
+	"preview_urls": true,
+	"vars": {
+		"RESEND_FROM_EMAIL": "contact@kaanchnr.dev",
+		"RESEND_TO_EMAIL": "chinarkaan@gmail.com"
+	}
+}
