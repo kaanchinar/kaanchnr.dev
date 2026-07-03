@@ -4,8 +4,6 @@ import { Resend } from 'resend';
 import type { Actions } from './$types';
 import { validateContact } from './validate';
 
-const resend = new Resend(env.RESEND_API_KEY);
-
 export const actions = {
 	default: async ({ request }) => {
 		const data = await request.formData();
@@ -22,6 +20,8 @@ export const actions = {
 		if (!env.RESEND_API_KEY) {
 			return fail(500, { name, email, message, error: 'Email service is not configured.' });
 		}
+
+		const resend = new Resend(env.RESEND_API_KEY);
 
 		const { error } = await resend.emails.send({
 			from: env.RESEND_FROM_EMAIL ?? 'contact@kaanchnr.dev',
