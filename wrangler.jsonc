@@ -8,8 +8,14 @@
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
 	},
-	"workers_dev": true,
+	"workers_dev": false,
 	"preview_urls": true,
+	"routes": [
+		{
+			"pattern": "kaanchnr.dev/*",
+			"custom_domain": true
+		}
+	],
 	"vars": {
 		"RESEND_FROM_EMAIL": "contact@kaanchnr.dev",
 		"RESEND_TO_EMAIL": "chinarkaan@gmail.com"
