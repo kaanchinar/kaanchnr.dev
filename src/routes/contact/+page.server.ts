@@ -1,6 +1,5 @@
 import { fail } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
-import { Resend } from 'resend';
 import type { Actions } from './$types';
 import { validateContact } from './validate';
 
@@ -21,6 +20,7 @@ export const actions = {
 			return fail(500, { name, email, message, error: 'Email service is not configured.' });
 		}
 
+		const { Resend } = await import('resend');
 		const resend = new Resend(env.RESEND_API_KEY);
 
 		const { error } = await resend.emails.send({
