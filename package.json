@@ -26,7 +26,6 @@
 	"devDependencies": {
 		"@better-auth/cli": "~1.4.21",
 		"@eslint/js": "^10.0.1",
-		"@libsql/client": "^0.17.3",
 		"@secretlint/secretlint-rule-preset-recommend": "^13.0.2",
 		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"@sveltejs/kit": "^2.63.0",
@@ -39,6 +38,7 @@
 		"@types/node": "^24",
 		"@vitest/coverage-v8": "^4.1.9",
 		"better-auth": "~1.4.21",
+		"better-sqlite3": "^12.11.1",
 		"drizzle-kit": "^0.31.10",
 		"drizzle-orm": "^0.45.2",
 		"eslint": "^10.4.1",

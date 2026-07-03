@@ -13,5 +13,12 @@
 	"vars": {
 		"RESEND_FROM_EMAIL": "contact@kaanchnr.dev",
 		"RESEND_TO_EMAIL": "chinarkaan@gmail.com"
-	}
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "kaanchnr-dev",
+			"database_id": "e85c582a-cf44-403f-898a-999abec3aaf2"
+		}
+	]
 }
