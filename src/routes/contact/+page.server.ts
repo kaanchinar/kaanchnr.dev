@@ -2,9 +2,10 @@ import { fail } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 import type { Actions } from './$types';
 import { validateContact } from './validate';
+import { verifyTurnstile } from './turnstile';
 
 export const actions = {
-	default: async ({ request }) => {
+	default: async ({ request, getClientAddress }) => {
 		const data = await request.formData();
 		const name = data.get('name');
 		const email = data.get('email');
@@ -14,6 +15,25 @@ export const actions = {
 
 		if (!validation.valid) {
 			return fail(400, { name, email, message, error: validation.error });
+		}
+
+		if (!env.TURNSTILE_SECRET) {
+			return fail(500, {
+				name,
+				email,
+				message,
+				error: 'Verification service is not configured.'
+			});
+		}
+
+		const turnstileOk = await verifyTurnstile(
+			data.get('cf-turnstile-response'),
+			env.TURNSTILE_SECRET,
+			getClientAddress()
+		);
+
+		if (!turnstileOk) {
+			return fail(400, { name, email, message, error: 'Verification failed. Please try again.' });
 		}
 
 		if (!env.RESEND_API_KEY) {

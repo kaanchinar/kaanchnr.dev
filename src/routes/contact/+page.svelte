@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { env } from '$env/dynamic/public';
+	import { Turnstile } from 'svelte-turnstile';
 	import SocialLinks from '$lib/components/SocialLinks.svelte';
 
 	let { form } = $props();
 	let pending = $state(false);
+	let resetTurnstile: (() => void) | undefined = $state();
 </script>
 
 <svelte:head>
@@ -24,9 +27,10 @@
 		class="space-y-4"
 		use:enhance={() => {
 			pending = true;
-			return async ({ update }) => {
+			return async ({ result, update }) => {
 				pending = false;
 				await update();
+				if (result.type === 'failure') resetTurnstile?.();
 			};
 		}}
 	>
@@ -66,6 +70,12 @@
 		{#if form?.error}
 			<p class="text-sm text-red-600 dark:text-red-400">{form.error}</p>
 		{/if}
+		<Turnstile
+			siteKey={env.PUBLIC_TURNSTILE_SITE_KEY ?? ''}
+			theme="auto"
+			action="turnstile-spin-v2"
+			bind:reset={resetTurnstile}
+		/>
 		<button
 			type="submit"
 			disabled={pending}

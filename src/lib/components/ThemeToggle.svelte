@@ -20,7 +20,7 @@
 	});
 </script>
 
-<div class="inline-flex rounded-full border border-border bg-bg-elevated p-1 shadow-sm">
+<div class="inline-flex self-start rounded-full border border-border bg-bg-elevated p-1 shadow-sm">
 	{#each options as option (option)}
 		<button
 			type="button"
