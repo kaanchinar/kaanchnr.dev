@@ -21,10 +21,9 @@
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "drizzle-kit migrate",
 		"db:studio": "drizzle-kit studio",
-		"auth:schema": "better-auth generate --config src/lib/server/auth.ts --output src/lib/server/db/auth.schema.ts --yes"
+		"auth:schema": "bunx @better-auth/cli@1.4.21 generate --config src/lib/server/auth.ts --output src/lib/server/db/auth.schema.ts --yes"
 	},
 	"devDependencies": {
-		"@better-auth/cli": "~1.4.21",
 		"@eslint/js": "^10.0.1",
 		"@secretlint/secretlint-rule-preset-recommend": "^13.0.2",
 		"@sveltejs/adapter-cloudflare": "^7.2.8",
@@ -37,7 +36,7 @@
 		"@testing-library/svelte": "^5.4.2",
 		"@types/node": "^24",
 		"@vitest/coverage-v8": "^4.1.9",
-		"better-auth": "~1.6.23",
+		"better-auth": "~1.6.25",
 		"better-sqlite3": "^12.11.1",
 		"drizzle-kit": "^0.31.10",
 		"drizzle-orm": "^0.45.2",

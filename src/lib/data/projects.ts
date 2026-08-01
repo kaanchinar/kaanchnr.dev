@@ -9,6 +9,20 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		name: 'latex-renderer',
+		description:
+			'Self-hosted platform for editing and compiling LaTeX documents in real time, with a SignalR compile-preview loop, Tectonic engine, and S3-compatible storage.',
+		tech: ['C#', 'ASP.NET Core', 'SignalR', 'PostgreSQL', 'Tectonic', 'Docker'],
+		repoUrl: 'https://github.com/kaanchinar/latex-renderer'
+	},
+	{
+		name: 'LibraryManagement',
+		description:
+			'REST API for managing a library catalog and circulation, built with Clean Architecture, MediatR/CQRS, FluentValidation, and full xUnit test coverage.',
+		tech: ['C#', 'ASP.NET Core', 'PostgreSQL', 'MediatR', 'Docker'],
+		repoUrl: 'https://github.com/kaanchinar/LibraryManagement'
+	},
+	{
 		name: 'todo-api-go',
 		description:
 			'Production-ready REST API built in Go using Chi framework with clean architecture, middleware, and full CI/CD pipeline.',
