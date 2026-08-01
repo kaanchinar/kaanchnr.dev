@@ -131,13 +131,13 @@ Better Auth's default API base path is `/api/auth/*` (not customized in the conf
 
 The following variables are required (see `.env.example` and the generated `worker-configuration.d.ts`):
 
-| Variable                    | Purpose                                                                                               |
-| --------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `DATABASE_URL`              | libSQL database URL, e.g. `file:local.db` locally or `libsql://…` in production                       |
-| `ORIGIN`                    | Public origin used by Better Auth                                                                     |
-| `BETTER_AUTH_SECRET`        | Secret key for Better Auth; use a 32-character high-entropy value in production                       |
-| `PUBLIC_TURNSTILE_SITE_KEY` | Cloudflare Turnstile site key for the contact form widget; read client-side via `$env/dynamic/public` |
-| `TURNSTILE_SECRET`          | Cloudflare Turnstile secret used server-side to verify contact form tokens                            |
+| Variable                    | Purpose                                                                                                                                  |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `DATABASE_URL`              | libSQL database URL, e.g. `file:local.db` locally or `libsql://…` in production                                                          |
+| `ORIGIN`                    | Public origin used by Better Auth                                                                                                        |
+| `BETTER_AUTH_SECRET`        | Secret key for Better Auth; use a 32-character high-entropy value in production                                                          |
+| `PUBLIC_TURNSTILE_SITE_KEY` | Cloudflare Turnstile site key for the contact form widget; set in `wrangler.jsonc` `vars` and passed to the page from the contact `load` |
+| `TURNSTILE_SECRET`          | Cloudflare Turnstile secret used server-side to verify contact form tokens                                                               |
 
 These are read via `$env/dynamic/private` on the server (and `$env/dynamic/public` for the `PUBLIC_`-prefixed site key). On Cloudflare they come from the Worker environment (`event.platform.env` / Wrangler secrets). `ASSETS` is the static-assets binding generated automatically by the Cloudflare adapter.
 
@@ -149,6 +149,7 @@ Do not commit `.env`. `.env.example` documents the required variables.
 - **Build**: `bun run build` produces the Worker bundle and static assets.
 - **Preview**: `bun run preview` runs the Worker locally with Wrangler.
 - **Deploy**: `bunx wrangler deploy` (uses `wrangler.jsonc`). There are no GitHub Actions or other CI/CD workflows in the repository.
+- **Secrets**: `.env` is local-only and never uploaded. Server secrets (`TURNSTILE_SECRET`, `RESEND_API_KEY`, `BETTER_AUTH_SECRET`, `DATABASE_URL`) must be set on the Worker with `bunx wrangler secret put <NAME>`; non-secret config lives in `wrangler.jsonc` `vars`.
 
 `wrangler.jsonc` settings:
 

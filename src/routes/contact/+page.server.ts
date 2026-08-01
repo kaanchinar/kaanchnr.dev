@@ -1,8 +1,12 @@
 import { fail } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
-import type { Actions } from './$types';
+import type { Actions, PageServerLoad } from './$types';
 import { validateContact } from './validate';
 import { verifyTurnstile } from './turnstile';
+
+export const load: PageServerLoad = async () => {
+	return { turnstileSiteKey: env.PUBLIC_TURNSTILE_SITE_KEY ?? '' };
+};
 
 export const actions = {
 	default: async ({ request, getClientAddress }) => {

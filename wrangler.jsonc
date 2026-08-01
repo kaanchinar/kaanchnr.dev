@@ -18,7 +18,8 @@
 	],
 	"vars": {
 		"RESEND_FROM_EMAIL": "contact@kaanchnr.dev",
-		"RESEND_TO_EMAIL": "chinarkaan@gmail.com"
+		"RESEND_TO_EMAIL": "chinarkaan@gmail.com",
+		"PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAAEDjXcH59ysj4l02"
 	},
 	"d1_databases": [
 		{

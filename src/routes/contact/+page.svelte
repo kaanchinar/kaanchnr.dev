@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { env } from '$env/dynamic/public';
 	import { Turnstile } from 'svelte-turnstile';
 	import SocialLinks from '$lib/components/SocialLinks.svelte';
 
-	let { form } = $props();
+	let { form, data } = $props();
 	let pending = $state(false);
 	let resetTurnstile: (() => void) | undefined = $state();
 </script>
@@ -71,7 +70,7 @@
 			<p class="text-sm text-red-600 dark:text-red-400">{form.error}</p>
 		{/if}
 		<Turnstile
-			siteKey={env.PUBLIC_TURNSTILE_SITE_KEY ?? ''}
+			siteKey={data.turnstileSiteKey}
 			theme="auto"
 			action="turnstile-spin-v2"
 			bind:reset={resetTurnstile}
