@@ -151,7 +151,7 @@ Do not commit `.env`. `.env.example` documents the required variables.
 `wrangler.jsonc` settings:
 
 - `compatibility_date`: `2026-06-27`
-- `compatibility_flags`: `["nodejs_als"]`
+- `compatibility_flags`: `["nodejs_compat", "nodejs_als"]` — `nodejs_compat` is required because Better Auth (`@better-auth/utils`) imports `node:crypto`; without it `wrangler deploy` fails with "No such module node:crypto" (error 10021)
 - `main`: `.svelte-kit/cloudflare/_worker.js`
 - `assets.directory`: `.svelte-kit/cloudflare`
 
