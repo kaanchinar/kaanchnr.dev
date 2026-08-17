@@ -5,8 +5,8 @@ export interface Social {
 }
 
 export const socials: Social[] = [
-	{ name: 'GitHub', url: 'https://github.com/kaanchnr', icon: 'github' },
-	{ name: 'LinkedIn', url: 'https://linkedin.com/in/kaanchnr', icon: 'linkedin' },
+	{ name: 'GitHub', url: 'https://github.com/kaanchinar', icon: 'github' },
+	{ name: 'LinkedIn', url: 'https://www.linkedin.com/in/kaan-chinar', icon: 'linkedin' },
 	{ name: 'X', url: 'https://x.com/kaanchnr', icon: 'x' },
-	{ name: 'Instagram', url: 'https://instagram.com/kaan.chnrr', icon: 'instagram' }
+	{ name: 'Instagram', url: 'https://instagram.com/kaanchinar', icon: 'instagram' }
 ];
